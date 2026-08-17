@@ -1,0 +1,84 @@
+body section a {
+    @apply underline text-brand-accent transition-colors duration-300;
+    &:hover {
+        color: #722509;
+    }
+}
+.button {
+    @apply min-w-32 lg:min-w-40 text-center py-2 lg:py-3 px-4 lg:px-6 rounded no-underline text-white uppercase font-bold tracking-wider text-sm lg:text-lg font-button transition-colors duration-300;
+    &:hover {
+        @apply text-white;
+    }
+    &.main {
+        @apply bg-brand-main;
+        &:hover {
+            background-color: #499BA5;
+        }
+    }
+    &.dark {
+        @apply bg-brand-dark;
+        &:hover {
+            background-color: #48814C;
+        }
+    }
+    &.accent {
+        @apply bg-brand-accent;
+        &:hover {
+            background-color: #722509;
+        }
+    }
+    &.neutral {
+        @apply bg-brand-neutral text-brand-black;
+        &:hover {
+            background-color: #E5B90F;
+        }
+    }
+    &.black {
+        @apply bg-brand-black;
+        &:hover {
+            background-color: #020202;
+        }
+    }
+    &.small {
+      @apply lg:min-w-0 text-sm xl:text-base whitespace-nowrap py-2 px-3 xl:py-2 xl:px-3 ;
+    }
+}
+
+//these styles are used to override the Swiper.js navigation buttons
+.swiper-button-custom-arrow .swiper-button-next, .swiper-button-custom-arrow .swiper-button-prev {
+  @apply rounded-full bg-brand-dark flex items-center justify-center relative;
+  @apply h-12 w-12 #{!important};
+}
+
+.swiper-button-custom-arrow .swiper-button-next {
+  &:after {
+    content: "" !important;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 27.6 27.6' style='enable-background:new 0 0 27.6 27.6;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23FFFFFF;%7D%0A%3C/style%3E%3Cpath class='st0' d='M15,0.6l-3.2,3.1l7.4,7.4H0v5.2h19.2l-7.4,7.4l3.2,3.2l12.6-13.2L15,0.6z'/%3E%3C/svg%3E%0A");
+    position: relative;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.swiper-button-custom-arrow .swiper-button-prev {
+  &:after {
+    content: "" !important;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 27.6 27.6' style='enable-background:new 0 0 27.6 27.6;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23FFFFFF;%7D%0A%3C/style%3E%3Cpath class='st0' d='M-32.6,0.6l-3.2,3.1l7.4,7.4h-19.2v5.2h19.2l-7.4,7.4l3.2,3.2L-20,13.8L-32.6,0.6z'/%3E%3Cpath class='st0' d='M12.6,26.9l3.2-3.1l-7.4-7.4h19.2v-5.2H8.4l7.4-7.4l-3.2-3.2L0,13.8L12.6,26.9z'/%3E%3C/svg%3E%0A");
+    position: relative;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.swiper-pagination-bullet {
+  @apply bg-brand-dark border-white border-2 h-3 w-3 opacity-100 #{!important};
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-brand-dark relative #{!important};
+
+  &::after {
+    content: "";
+    @apply bg-brand-dark w-4 h-4 absolute -z-1 rounded-full -left-1 -bottom-1;
+  }
+}

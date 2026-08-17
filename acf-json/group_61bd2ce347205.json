@@ -1,0 +1,351 @@
+{
+    "key": "group_61bd2ce347205",
+    "title": "Event Calendar Fields",
+    "fields": [
+        {
+            "key": "field_61c254d19255a",
+            "label": "Event details",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6234f49f2dd45",
+            "label": "Contact information",
+            "name": "contact_information",
+            "type": "email",
+            "instructions": "Add an email for people contact you about this event.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "info@madaboutewe.ca",
+            "placeholder": "info@madaboutewe.ca",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_61be4531bf7ed",
+            "label": "Start date & time",
+            "name": "start_date",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y g:i a",
+            "return_format": "Y-m-d H:i:s",
+            "first_day": 0
+        },
+        {
+            "key": "field_61be43c45f087",
+            "label": "End date & time",
+            "name": "end_date",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y g:i a",
+            "return_format": "Y-m-d H:i:s",
+            "first_day": 0
+        },
+        {
+            "key": "field_61c39107090de",
+            "label": "Location",
+            "name": "location",
+            "type": "select",
+            "instructions": "Select the event's location.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "mae": "Mad About Ewe Store",
+                "zoom": "Online (via Zoom link)",
+                "youtube": "Live on YouTube",
+                "tba": "TBA"
+            },
+            "default_value": "Mad About Ewe Store",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "array",
+            "placeholder": ""
+        },
+        {
+            "key": "field_61c25aff2f62d",
+            "label": "Zoom registration link",
+            "name": "zoom_registration_link",
+            "type": "url",
+            "instructions": "This should be the link from Zoom.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61c39107090de",
+                        "operator": "==",
+                        "value": "zoom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_61fd9ae6adbe3",
+            "label": "Zoom Meeting ID",
+            "name": "zoom_meeting_id",
+            "type": "number",
+            "instructions": "Add the Zoom Meeting ID here.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61c39107090de",
+                        "operator": "==",
+                        "value": "zoom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "i.e. '999 5555 1234'",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_61c3924a8528c",
+            "label": "Event at Mad About Ewe",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61c39107090de",
+                        "operator": "==",
+                        "value": "mae"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            },
+            "message": "This event is at the Store.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_623511e660240",
+            "label": "YouTube link",
+            "name": "youtube_link",
+            "type": "url",
+            "instructions": "This should be the link from YouTube.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61c39107090de",
+                        "operator": "==",
+                        "value": "youtube"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_61c392a78528e",
+            "label": "Event location TBA",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61c39107090de",
+                        "operator": "==",
+                        "value": "tba"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            },
+            "message": "Location is yet to be decided and is currently TBA.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_61c25a7797db9",
+            "label": "Event description",
+            "name": "event_description",
+            "type": "textarea",
+            "instructions": "This content is required and should be a short intro to the event type, you can add anything you'd like here (Max 1500 characters).",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": 1500,
+            "rows": 8,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_61c263e73d8ae",
+            "label": "Event image",
+            "name": "event_image",
+            "type": "image",
+            "instructions": "Add an image for the event.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_61c253a80a318",
+            "label": "More Content",
+            "name": "content_row",
+            "type": "repeater",
+            "instructions": "Add groups of content in rows. Each row has a title and a content block that can be filled with paragraphs.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_61c254380a319",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add Content",
+            "sub_fields": [
+                {
+                    "key": "field_61c254380a319",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "Add a content row title (Max characters 64).",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 64
+                },
+                {
+                    "key": "field_61c254590a31a",
+                    "label": "Content block",
+                    "name": "content_block",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": "br"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ]
+    ],
+    "menu_order": 15,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1647645353
+}

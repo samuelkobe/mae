@@ -1,0 +1,14 @@
+//archive page styles on /services page.
+.services-thumbnail {
+    &:hover {
+        .services-content-title {
+            @apply mb-4;
+        }
+        .services-content-paragraph {
+            @apply h-12 opacity-100;
+        }
+        .services-thumbnail-colour-bar {
+            @apply h-3;
+        }
+    }
+}

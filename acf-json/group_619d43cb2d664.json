@@ -1,0 +1,257 @@
+{
+    "key": "group_619d43cb2d664",
+    "title": "Notice Board",
+    "fields": [
+        {
+            "key": "field_61d791daca7fb",
+            "label": "Notice Board?",
+            "name": "notice_board_toggle",
+            "type": "true_false",
+            "instructions": "Toggle the home page notice board 'On' or 'Off'. It is off by default.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        },
+        {
+            "key": "field_61d7922fca7fc",
+            "label": "Notice board status",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61d791daca7fb",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Notice board is currently toggled off.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_619d49f10be9f",
+            "label": "Notices",
+            "name": "notices",
+            "type": "flexible_content",
+            "instructions": "Add a notice(s) to the message board. Each notice must have a <b>Title<\/b> and <b>Message<\/b>. Notices can also have an optional <b>Button<\/b>. The button can be used to send the visitor to another page.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61d791daca7fb",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_619d49f9b34da": {
+                    "key": "layout_619d49f9b34da",
+                    "name": "notice",
+                    "label": "Notice",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_619d4a040bea3",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "Add a short message title for this notice (max 32 characters).",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": 32
+                        },
+                        {
+                            "key": "field_619d4a0b0bea4",
+                            "label": "Message",
+                            "name": "message",
+                            "type": "textarea",
+                            "instructions": "Add a message here. This can be a few sentences (max 256 characters).",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": 258,
+                            "rows": 4,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_619d4a150bea5",
+                            "label": "Button",
+                            "name": "button_link",
+                            "type": "link",
+                            "instructions": "Add a button to the notice. If no button is needed leave this empty.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Notice",
+            "min": "",
+            "max": 5
+        },
+        {
+            "key": "field_619d481acc018",
+            "label": "Highlighted information",
+            "name": "highlighted_information",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61d791daca7fb",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_61d7929cb380b",
+                    "label": "Title",
+                    "name": "section_title",
+                    "type": "text",
+                    "instructions": "Add a title to this section",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_619d484acc019",
+                    "label": "Weekly events",
+                    "name": "weekly_events",
+                    "type": "wysiwyg",
+                    "instructions": "Add important information. You can use this special content editor to add links inside this content. Click the link button if you like to link to another page here.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0
+                },
+                {
+                    "key": "field_619d48c2cc01a",
+                    "label": "Mailing Address",
+                    "name": "mailing_address",
+                    "type": "textarea",
+                    "instructions": "Add the mailing address here.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": 128,
+                    "rows": 4,
+                    "new_lines": "br"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "2"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "author",
+        "format",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1641517761
+}

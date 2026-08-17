@@ -1,0 +1,18 @@
+ul.list-content {
+    li {
+        @apply text-brand-black relative flex items-center leading-6 mb-4 ml-8 max-w-full;
+        &::before {
+            @apply absolute flex items-center top-3 -left-8 font-semibold bg-brand-main w-4 h-1 rounded;
+            content: "";
+        }
+    }
+}
+
+ol.list-content {
+    li {
+        @apply text-brand-main list-decimal leading-6 mb-4 ml-4 pl-4 max-w-full;
+        span {
+            @apply text-brand-black;
+        }
+    }
+}

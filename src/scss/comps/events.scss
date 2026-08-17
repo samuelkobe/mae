@@ -1,0 +1,14 @@
+.event-hover-effect { // create a hover effect for the images of the events
+  &:hover {
+    img {
+      @apply scale-110 opacity-70;
+    }
+  }
+  &.event-hover-effect-no-opacity {
+    &:hover {
+      img {
+        @apply scale-105 opacity-100;
+      }
+    }
+  }
+}

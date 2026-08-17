@@ -1,0 +1,61 @@
+{
+    "key": "group_6087992fea8d5",
+    "title": "Splash Message",
+    "fields": [
+        {
+            "key": "field_608799371ddea",
+            "label": "Splash Message",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "This theme is currently using the splash page template for the home page. If you want the splash page to be live the content can be edited in <b>'Theme Settings'<\/b>. If you would like to remove the splash page select a different page template on the home page.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "2"
+            },
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-splash.php"
+            }
+        ]
+    ],
+    "menu_order": 45,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1637893728
+}

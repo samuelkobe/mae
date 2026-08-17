@@ -1,0 +1,8 @@
+footer {
+    ul li {
+        @apply h-8;
+    }
+    .menu-anchor {
+        @apply hover:text-brand-neutral transition-colors duration-300;
+    }
+}

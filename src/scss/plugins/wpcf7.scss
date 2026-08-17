@@ -1,0 +1,91 @@
+.wpcf7-form {
+  input, textarea {
+    // @apply bg-white border-2 border-grey-alt rounded text-brand-black p-4 w-full max-w-full;
+    @apply text-brand-black
+         rounded
+         border-transparent
+         placeholder-grey-alt
+         focus:outline-none
+         outline-none
+         ring-2
+         ring-grey-alt
+         focus:ring-2
+         focus:ring-brand-main
+         focus:text-brand-black
+         focus:border-transparent
+         p-4
+         w-full
+         max-w-full;
+  }
+  input {
+    @apply h-12 lg:h-16;
+  }
+  textarea {
+    @apply h-24 lg:h-48;
+  }
+  input.wpcf7-submit {
+    @apply bg-brand-accent w-auto border-none ring-0 min-w-32 h-auto lg:min-w-40 text-center py-2 lg:py-3 px-4 mt-2 inline-block lg:px-6 rounded no-underline text-white uppercase font-bold tracking-wider text-sm lg:text-lg font-button transition-colors duration-300 cursor-pointer;
+    &:hover {
+        background-color: #722509;
+    }
+  }
+  
+  .wpcf7-select {
+    @apply block h-12 lg:h-16 text-base font-normal capitalize text-grey-dark w-full max-w-full border-2 border-grey-alt rounded bg-white placeholder-grey-dark;
+  	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+  	-moz-appearance: none;
+  	-webkit-appearance: none;
+  	appearance: none;
+  	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7.57 3.75'%3E%3Cpolygon points='1.22 0.5 6.36 0.5 3.79 3.04 3.79 3.04 1.22 0.5' style='fill:%23171717;stroke:%23171717;stroke-miterlimit:10'/%3E%3C/svg%3E");
+  	background-repeat: no-repeat, repeat;
+  	background-position: right .7em top 50%, 0 0;
+  	background-size: .65em auto, 100%;
+  }
+
+  .ajax-loader {
+      @apply absolute m-0 -left-3 top-3;
+  }
+
+  input, textarea, .wpcf7-select {
+    &:focus {
+        @apply border border-brand-accent;
+        box-shadow: 0 0 1px 1px #AF3E14;
+        box-shadow: 0 0 0 1px -moz-mac-focusring;
+        outline: none;
+    }
+  }
+
+  .wordpress-content {
+    &.wrapper-content {
+      @apply flex flex-row w-full flex-wrap mb-4;
+    }
+    &.left-content {
+      @apply flex flex-col w-full lg:w-1/2 max-w-full pr-0 lg:pr-4 mb-2;
+    }
+    &.right-content {
+      @apply flex flex-col w-full lg:w-1/2 max-w-full pl-0 lg:pl-4 mb-2;
+    }
+    &.content-padding-bottom {
+      @apply mb-8;
+    }
+    .form-title-label {
+      @apply text-lg lg:text-2xl text-brand-accent font-semibold mb-2 inline-block;
+    }
+  }
+
+    /* Support for rtl text, explicit support for Arabic and Hebrew */
+    *[dir="rtl"] .wpcf7-select, :root:lang(ar) .wpcf7-select, :root:lang(iw) .wpcf7-select {
+        background-position: left .7em top 50%, 0 0;
+        padding: .6em .8em .5em 1.4em;
+    }
+
+}
+
+.wpcf7-spinner {
+  @apply absolute top-0 right-0;
+}
+
+form > div.wpcf7-response-output {
+    @apply text-base lg:text-xl mb-8;
+    padding: 1rem !important;
+}

@@ -1,0 +1,48 @@
+// grouped repeating styles
+.contained {
+  @apply flex flex-col px-6 lg:px-12 2xl:container 2xl:mx-auto;
+}
+
+// auto adjusted custom height for screen sizes. In combination with js/h-vh.js
+.custom-h-screen {
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+  &.custom-h-screen-80 {
+    height: 80vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 80);
+  }
+  &.custom-h-screen-55 {
+    height: 55vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 55);
+  }
+  &.custom-h-screen-half {
+    height: 50vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 50);
+    @media (min-width: 1024px) {
+      height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+      height: calc(var(--vh, 1vh) * 100);
+    }
+  }
+}
+
+.lg\:custom-h-screen { // implementated to allow lg only usage.
+  @media (min-width: 1024px) {
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+    &.custom-h-screen-80 {
+      height: 80vh; /* Fallback for browsers that do not support Custom Properties */
+      height: calc(var(--vh, 1vh) * 80);
+    }
+    &.custom-h-screen-55 {
+      height: 55vh; /* Fallback for browsers that do not support Custom Properties */
+      height: calc(var(--vh, 1vh) * 55);
+    }
+  }
+}
+
+.xl\:custom-h-screen { // implementated to allow xl only usage.
+  @media (min-width: 1280px) {
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+  }
+}

@@ -1,0 +1,192 @@
+// menu and nav styles
+
+#header {
+    @apply h-24;
+    position: fixed;
+    transition: height 500ms ease-out 125ms, opacity 500ms ease-out 125ms;
+    &.topped {
+        @apply bg-brand-black h-16 lg:h-24 opacity-100;
+        transition: height 500ms ease-out 125ms, opacity 500ms ease-out 125ms;
+    }
+    &.header-onload {
+        @apply h-16 lg:h-24 opacity-100;
+        transition: height 500ms ease-out 125ms, opacity 500ms ease-out 125ms;
+        animation-duration: 1000ms;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-name: popdown;
+    }
+    &.scroll-down {
+        @apply bg-brand-black h-16 opacity-100;
+        // box-shadow: 0 2px 1px -1px rgb(175, 62, 20);
+        transition: height 500ms ease-out 125ms, opacity 500ms ease-out 125ms;
+        position: fixed;
+        .custom-logo {
+          @apply transition-all duration-500 lg:h-14 lg:w-auto;
+        }
+        ul > li > a {
+          @apply text-white;
+        }
+        ul li.active > a {
+          @apply text-brand-neutral;
+       }
+    }
+
+    &.scroll-up {
+        @apply bg-brand-black h-16 opacity-100;
+        // box-shadow: 0 2px 1px -1px rgb(175, 62, 20);
+        transition: height 500ms ease-out 0ms, opacity 500ms ease-out 0ms;
+        position: fixed;
+        .custom-logo {
+          @apply transition-all duration-500 lg:h-14 lg:w-auto;
+        }
+        ul > li > a {
+          @apply text-white;
+        }
+        ul li.active > a {
+          @apply text-brand-neutral;
+       }
+    }
+    &.hold-down {
+        @apply bg-brand-black #{!important};
+        // box-shadow: 0 2px 7px -1px rgb(175, 62, 20);
+        transition: height 500ms ease-out 125ms, opacity 500ms ease-out 125ms;
+        position: fixed;
+        .custom-logo {
+          @apply transition-all duration-500;
+        }
+        ul > li > a {
+          @apply text-white;
+        }
+        ul li.active > a {
+          @apply text-brand-neutral;
+        }
+    }
+  &:hover {
+    @apply opacity-100;
+    transition: height 250ms ease-out 0ms, opacity 250ms ease-out 0ms;
+  }
+  .custom-logo {
+    @apply  transition-all ease-in duration-500 xl:h-20 w-auto;
+  }
+}
+
+header {
+  @apply uppercase;
+  ul {
+    @apply w-full flex flex-col lg:flex-row justify-between text-xl lg:text-base xl:text-lg transition-all duration-500;
+    li.active > a {
+      @apply text-brand-neutral;
+    }
+    li {
+      @apply relative flex items-center justify-center;
+      &.submenu-parent {
+        @apply flex flex-col lg:flex-row lg:mr-6;
+        &:hover {
+          @media (min-width: 1024px) {          
+            .sub-menu {
+              @apply bg-brand-dark p-4 rounded w-auto transition-all duration-300 delay-150;
+              li {
+                @apply h-7 visible transition-all duration-300 delay-150;
+                @media (min-width: 1024px) {
+                  height: 32px;
+                }
+              }
+            }
+          }
+        }
+        @media (max-width: 1023px) {  
+          .sub-menu {  
+            @apply h-auto bg-transparent p-0 rounded w-auto transition-all duration-300 delay-150;
+            li {
+              @apply h-0 invisible transition-all duration-150 delay-100 mb-0;
+            }
+            &.open {
+              @apply bg-brand-dark h-auto p-4 transition-all duration-300 delay-100;
+              li {
+                @apply h-7 visible transition-all duration-300 delay-150 mb-2;
+              }
+            }
+          }
+        }
+      }
+      .submenu-arrow {
+        @apply cursor-pointer transform scale-100 transition-transform duration-300 absolute top-1.5 -right-7 w-5 h-5 bg-contain bg-no-repeat bg-center;
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 48 48' style='enable-background:new 0 0 48 48;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bdisplay:none;%7D .st1%7Bdisplay:inline;%7D .st2%7Bfill:none;stroke:%2362A266;stroke-width:6.8674;stroke-miterlimit:10;%7D%0A%3C/style%3E%3Cg id='x' class='st0'%3E%3Cg class='st1'%3E%3Cg%3E%3Cline class='st2' x1='3.4' y1='3.4' x2='44.6' y2='44.6'/%3E%3C/g%3E%3Cg%3E%3Cline class='st2' x1='44.6' y1='3.4' x2='3.4' y2='44.6'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg id='arrow'%3E%3Cg%3E%3Cpolyline class='st2' points='44.6,3.4 24,24 3.4,3.4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+        &:hover {
+          @apply transform scale-105;
+        }
+        @media (max-width: 1023px) {
+          @apply top-1 right-1/4;
+          &.open {
+              background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 48 48' style='enable-background:new 0 0 48 48;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:none;stroke:%2362A266;stroke-width:6.8674;stroke-miterlimit:10;%7D .st1%7Bdisplay:none;%7D .st2%7Bdisplay:inline;%7D%0A%3C/style%3E%3Cg id='x'%3E%3Cg%3E%3Cg%3E%3Cline class='st0' x1='3.4' y1='3.4' x2='44.6' y2='44.6'/%3E%3C/g%3E%3Cg%3E%3Cline class='st0' x1='44.6' y1='3.4' x2='3.4' y2='44.6'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg id='arrow' class='st1'%3E%3Cg class='st2'%3E%3Cpolyline class='st0' points='44.6,3.4 24,24 3.4,3.4 '/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+            }
+        }
+      }
+    }
+    li > a {
+      @apply z-0 relative transition-colors duration-300;
+      &:hover {
+        @apply text-brand-neutral #{!important};
+      }
+    }
+  }      
+}
+
+#menu { 
+  &.open {
+    @apply h-auto z-10 translate-x-0 opacity-100 transition-transform duration-300 lg:duration-0;
+  }
+  li {
+    @apply mb-2 lg:mb-0 lg:ml-3 xl:ml-5;
+    ul.sub-menu {
+      li {
+        @apply ml-0 mb-0;
+        a {
+          @apply text-white transition-colors duration-300;
+          &:hover {
+            @apply text-brand-black #{!important};
+          }
+        }
+        &.active > a {
+          @apply text-brand-black;
+        }
+      }
+    }
+  }
+}
+
+// sub-menu styles
+ul.sub-menu {
+  @apply bg-transparent flex flex-col lg:absolute top-10 w-auto h-auto transition-all duration-300 delay-150;
+  li {
+    @apply h-0 invisible duration-150 delay-100;
+  }
+  a {
+    @apply whitespace-nowrap;
+  }
+}
+
+.hamburger {
+    @apply fixed lg:relative;
+  &.open {
+    span {
+      &:first-child {
+        transform: rotateZ(45deg);
+      }
+      &:last-child {
+        transform: rotateZ(-45deg);
+      }
+    }
+  }
+}
+
+@keyframes popdown {
+    0%, 50% {
+        transform: translateY(-15rem);
+    }
+    100% {
+        transition: transform 500ms ease-out 0ms;
+        transform: translateY(0rem);
+    }
+}

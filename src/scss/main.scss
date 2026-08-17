@@ -1,0 +1,22 @@
+//sanitize.css
+// @import url(~sanitize.css); // uncomment if you want sanitize.css included.
+
+//webokcss
+@import "global";
+@import "comps/button";
+@import "comps/lists";
+
+//comps
+@import "comps/header";
+@import "comps/footer";
+@import "comps/faq";
+@import "comps/video_embed";
+@import "comps/services";
+@import "comps/events";
+@import "comps/taku";
+
+//plugins
+@import "plugins/wpcf7";
+
+//fonts
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Nunito:wght@700&display=swap');
